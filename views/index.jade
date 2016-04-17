@@ -1,0 +1,23 @@
+html(lang='en')
+	head
+		link(href="https://fonts.googleapis.com/css?family=Josefin+Sans:600|Playfair+Display:700italic",  rel="stylesheet")
+		link(href="/css/main.css", rel="stylesheet")
+		<!--     <access uri="https://*.firebaseio.com" subdomains="true" /> -->
+	body
+		#contact
+			h3 Where are you traveling?
+			input#nameInput(type='text', placeholder='Name')
+			input#locationInput(type='text', placeholder='Location')
+			input#contactInput(type='text', placeholder='Contact')
+			h4 Arrival
+			input#startDateInput(type='date')
+			h4 Departure
+			input#endDateInput(type='date')
+		#map
+		script(src="https://cdn.firebase.com/js/client/2.4.2/firebase.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js")
+		script(src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer.js")
+		script(src="firebase.js")
+		script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA4AQA_ZJpqGeHF5S2d4T1wii7mgeJD2QI&libraries=visualization&callback=initMap", async, defer)
+		script(src="map.js")

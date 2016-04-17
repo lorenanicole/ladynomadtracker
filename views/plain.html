@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:600|Playfair+Display:700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="
+https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
+  <script src='http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer.js' type="text/javascript"></script>
+  </head>
+  <body>
+    <access uri="https://*.firebaseio.com" subdomains="true" />
+    <div id="contact">
+      <h3>Where are you traveling?</h3>
+      <input type='text' id='nameInput' placeholder='Name'>
+      <input type='text' id='locationInput' placeholder='Location'>
+      <input type='text' id='contactInput' placeholder='Contact'>
+      <input type='text' id='dateInput' placeholder='Date'>
+    </div>
+    <script src="firebase.js"></script>
+    <div id="map"></div>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA4AQA_ZJpqGeHF5S2d4T1wii7mgeJD2QI
+        &libraries=visualization&callback=initMap">
+    </script>
+    <script src="map.js"> </script>
+  </body>
+</html>
