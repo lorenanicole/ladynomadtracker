@@ -3,6 +3,8 @@ var express = require('express');
 var app = express();
 var path    = require("path");
 
+console.log('wooo');
+
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'jade');
