@@ -22,7 +22,7 @@ $('#submit').click(function(e)  {
     if (error) {
       console.log("Error creating user:", error);
     } else {
-      window.location.href = document.domain;
+      window.location.href = '/';
     }
   });
 
