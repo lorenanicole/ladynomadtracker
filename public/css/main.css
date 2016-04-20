@@ -29,9 +29,17 @@ input {
   padding: 1%;
   width: 96%;
 }
-input[type="text"], input[type="date"]
+
+input[type="text"], input[type="date"], input[type='submit']
 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1em;
 }
+
+#submit {
+  margin-top:0.4em;
+  border: none;
+  border: 3px black solid;
+}
+
 #map { height: 100%;}
