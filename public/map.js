@@ -1,7 +1,3 @@
-// var config = require('./config');
-
-// $( document ).ready(function() {
-
 function initMap() {
   // draw map
   var map = new google.maps.Map(document.getElementById('map'), {

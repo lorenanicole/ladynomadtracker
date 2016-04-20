@@ -9,8 +9,13 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'jade');
 
+
+app.get('/signup', function(req, res) {
+	res.render('signup.jade', {apiKey: config.googleMapsApiKey, 
+							  firebaseUrl: config.firebaseUrl});
+});
+
 app.get('/', function (req, res) {
-	console.log(config);
 	res.render('index.jade', {apiKey: config.googleMapsApiKey, 
 							  firebaseUrl: config.firebaseUrl});
 });
