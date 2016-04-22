@@ -3,14 +3,10 @@ html(lang='en')
 		link(href="https://fonts.googleapis.com/css?family=Josefin+Sans:600|Playfair+Display:700italic",  rel="stylesheet")
 		link(href="/css/main.css", rel="stylesheet")
 	body
-		#error
-		if error
-			h3 #{error}
-		#signup
-			h3 Sign up to connect with other lady digital nomads
-			form(action="/signup" method="post")
+		#reset
+			h3 Reset your password
+			form(action="/reset" method="post")
 				input#emailInput(type='text', placeholder='Email', name='email')
-				input#passwordInput(type='password', placeholder='Password', name='password')
 				input#submit(type='submit', value='Submit')
 		#map
 		script(src="https://cdn.firebase.com/js/client/2.4.2/firebase.js")
@@ -30,5 +26,5 @@ html(lang='en')
 				};
 				loadScript('https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{apiKey}+&libraries=visualization&callback=initMap',function(){console.log('weee');});
 			});
-  
-		script(src="basemap.js")
+
+		script(src="map.js")

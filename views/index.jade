@@ -3,22 +3,22 @@ html(lang='en')
 		link(href="https://fonts.googleapis.com/css?family=Josefin+Sans:600|Playfair+Display:700italic",  rel="stylesheet")
 		link(href="/css/main.css", rel="stylesheet")
 	body
-		#contact
-			h3 Where are you traveling?
-			input#nameInput(type='text', placeholder='Name')
-			input#locationInput(type='text', placeholder='Location')
-			input#contactInput(type='text', placeholder='Contact')
-			h4 Arrival
-			input#startDateInput(type='date')
-			h4 Departure
-			input#endDateInput(type='date')
-			input#submit(type='submit', value='Submit')
+		#login
+			h3 Login to connect with other lady digital nomads
+			form(action="/login" method="post")
+				input#emailInput(type='text', placeholder='Email', name='email')
+				input#passwordInput(type='password', placeholder='Password', name='password')
+				input#submit(type='submit', value='Submit')
+			h4 Don't have an account? 
+			h4: a(href='/signup') Sign up!
+			<br />
+			h4 Forgot your password?
+			h4: a(href='/reset') Reset password!
 		#map
 		script(src="https://cdn.firebase.com/js/client/2.4.2/firebase.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js")
 		script(src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer.js")
-		script#firebase(src="firebase.js" url="#{firebaseUrl}")
 		script(type="text/javascript").
 			$(document).ready(function() {
 				function loadScript(src,callback){
@@ -32,5 +32,5 @@ html(lang='en')
 				};
 				loadScript('https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{apiKey}+&libraries=visualization&callback=initMap',function(){console.log('weee');});
 			});
-  
+
 		script(src="map.js")

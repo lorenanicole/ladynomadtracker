@@ -39,6 +39,23 @@ function initMap() {
             anchor: new google.maps.Point(0, 32)
           }
         }); 
+
+        var contentString = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">'+ userData.name+'</h1>'+
+          '<div id="bodyContent">'+
+          '<p><b> </b>will be in ' + userData.location + " " + userData.startDate +  " to " + userData.endDate + ' </p>'+
+          '<p> Contact info: ' + userData.contact + 
+          '</p>'+
+          '</div>'+
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
         markers.push(marker);
       });
       var markerCluster = new MarkerClusterer(map, markers);

@@ -1,8 +1,8 @@
 html, body { height: 100%; margin: 0; padding: 0; }
 
-/* Index page */ 
+/* Home page */ 
 #contact {
-  background: rgba(192,192,192,0.7);
+  background: rgba(192,192,192,0.80);
   position: absolute;
   left:10px;
   top: 50px;
@@ -27,10 +27,16 @@ html, body { height: 100%; margin: 0; padding: 0; }
   font-weight: 700;
 }
 
-/* Sign up page */
+#logout a {
+  float: right;
+  text-decoration: none;
+  color: black;
+}
 
-#signup {
-  background: rgba(192,192,192,0.7);
+/* Index, Sign up, Reset page */
+
+#signup, #login, #reset {
+  background: rgba(192,192,192,0.8);
   position: absolute;
   left:10px;
   top: 50px;
@@ -39,7 +45,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
   background-color: none;
   padding: 15px;
 }
-#signup h3 {
+#signup h3, #login h3, #reset h3 {
   color: black;
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -48,7 +54,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
   max-width: 96%;
 }
 
-#signup h4 {
+#signup h4, #login h4 {
   color: black;
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -57,21 +63,21 @@ html, body { height: 100%; margin: 0; padding: 0; }
 
 /* Common */
 
-input {
+input, option, select {
   padding: 1%;
   width: 96%;
 }
 
-input[type="text"], input[type="date"], input[type='submit'], input[type="password"]
+select, input[type="text"], input[type="checkbox"], input[type="date"], input[type='submit'], input[type="password"], option
 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1em;
 }
 
-#submit {
+#submit, #settingsSubmit {
   margin-top:0.4em;
   border: none;
   border: 3px black solid;
 }
 
-#map { height: 100%;}
+#map { height: 100%; width: 100%;}
