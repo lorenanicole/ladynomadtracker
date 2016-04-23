@@ -56,7 +56,7 @@ app.get('/home', function (req, res) {
 
 	params = {apiKey: config.googleMapsApiKey, 
 			  firebaseUrl: config.firebaseUrl}
-	console.log(req.session.user);		  
+		  
 	if (req.session.user) {
 		params.auth = true;
 	} else {
@@ -106,6 +106,27 @@ app.get('/logout', function (req, res) {
 	req.session.reset();
 	res.redirect('/');
 });
+
+app.post('/notify', function(req, res) {
+	var userEmail = req.session.user.password.email;
+// 	var q = ref.child('notifications').orderByChild('email').equalTo(userEmail);
+// 	console.log(q);
+// 	q.once('value', function(snapshot) {
+//   	if (snapshot.val() === null) {
+//     // username does not yet exist, go ahead and add new user
+//   } else {
+//     // username already exists, ask user for a different name
+//   }
+// });
+console.log(userEmail.replace('@.',''));
+	var notificationsRef = ref.child('notifications/' + userEmail.replace('.',''));
+	var notificationData = { email: userEmail,
+							 location: req.body.address,
+							 notify: req.body.notify}
+	console.log(notificationData);
+	notificationsRef.set(notificationData);
+	res.redirect('/home');
+})
 
 app.listen(port, function () {
   console.log('Example app listening on port ' + port + '!!!!!');

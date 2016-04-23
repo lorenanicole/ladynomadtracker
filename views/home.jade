@@ -18,14 +18,15 @@ html(lang='en')
 			<br />
 			<br />
 			h3 Settings
-			h4 What is your home city and country?
-			input#addressInput(type='text', placeholder='Chicago, Illinois, United States', name='address')
-			h4 Would you like emails when travelers are in your area?
-			select
-				option(value='Yes') Yes
-				option(value='No') No
-			<br />
-			input#settingsSubmit(type='submit', value='Submit')
+			form(action="/notify" method="post")
+				h4 What is your home city and country?
+				input#addressInput(type='text', placeholder='Chicago, Illinois, United States', name='address')
+				h4 Would you like emails when travelers are in your area?
+				select(name='notify')
+					option(value='Yes') Yes
+					option(value='No') No
+				<br />
+				input#settingsSubmit(type='submit', value='Submit')
 		#map
 		script(src="https://cdn.firebase.com/js/client/2.4.2/firebase.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
